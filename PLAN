@@ -1,0 +1,38 @@
+StorePulse Project Plan / План проекту StorePulse
+English Version
+1. Project Scope
+Topic: Analytics of retail sales and customer behavior based on synthetically generated data.
+Main Goal: Build a simple data pipeline to store structured retail data, run SQL analytical queries, and visualize the results in Python.
+Out of Scope: The system will not include user authentication, a web interface, live data updates, or machine learning models.
+
+2. Business Questions for Analytics
+Our SQL queries and charts must answer the following business questions:
+
+What is the total revenue of the store over the entire period?
+
+What is the total number of orders and the Average Order Value?
+
+How do sales change over time?
+
+Which products and product categories sell best?
+
+Which cities have the most active customers?
+
+Українська версія
+1. Рамки проекту
+Тема: Аналітика роздрібних продажів та поведінки клієнтів на основі штучно згенерованих даних.
+Головна мета: Побудувати простий аналітичний конвеєр для збереження структурованих роздрібних даних, виконання аналітичних SQL-запитів та візуалізації результатів у Python.
+Поза межами проекту: Система не містить авторизації користувачів, веб-інтерфейсу, оновлень у реальному часі чи моделей машинного навчання.
+
+2. Бізнес-питання для аналітики
+Наші SQL-запити та графіки мають відповісти на такі бізнес-питання:
+
+Який загальний виторг магазину за весь час?
+
+Яка загальна кількість замовлень та який середній чек?
+
+Як змінюються продажі по місяцях?
+
+Які продукти та категорії товарів продаються найкраще?
+
+З яких міст у нас найбільше активних покупців?
