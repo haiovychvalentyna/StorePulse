@@ -2,17 +2,13 @@ import csv
 import random
 from datetime import datetime, timedelta
 
-# =====================================================================
-# 1. НАЛАШТУВАННЯ ТА ШАБЛОНИ ДАНИХ (Константи)
-# =====================================================================
-NUM_CUSTOMERS = 100  # Скільки покупців створити
-NUM_ORDERS = 300     # Скільки замовлень (чеків) зробити
+NUM_CUSTOMERS = 100 
+NUM_ORDERS = 300     
 
 cities = ["Київ", "Львів", "Одеса", "Харків", "Ужгород", "Івано-Франківськ", "Вінниця"]
 first_names = ["Іван", "Марія", "Олександр", "Олена", "Дмитро", "Тетяна", "Андрій", "Наталія", "Сергій", "Юлія"]
 last_names = ["Петренко", "Коваль", "Шевченко", "Коваленко", "Бойко", "Ткаченко", "Кравченко", "Олійник"]
 
-# Великий каталог товарів: (Назва, Категорія, Ціна в грн)
 product_templates = [
     # Електроніка
     ("Смартфон Apple iPhone", "Електроніка", 45000),
@@ -51,12 +47,10 @@ def generate_random_date(start_year, end_year):
     random_days = random.randint(0, delta.days)
     return start + timedelta(days=random_days)
 
-# =====================================================================
-# 2. ГЕНЕРАЦІЯ ДАНИХ
-# =====================================================================
+
 print("Start generatsii danykh...")
 
-# --- Створення клієнтів (Customers) ---
+
 customers_table = []
 customer_reg_dates = {}
 
@@ -69,12 +63,11 @@ for c_id in range(1, NUM_CUSTOMERS + 1):
     customers_table.append([c_id, full_name, city, reg_date_str])
     customer_reg_dates[c_id] = reg_date_dt
 
-# --- Створення каталогу продуктів (Products) ---
 products_table = []
 for p_id, (name, category, price) in enumerate(product_templates, start=1):
     products_table.append([p_id, name, category, price])
 
-# --- Створення замовлень (Orders) та чеків (Order Items) ---
+
 orders_table = []
 order_items_table = []
 item_id_counter = 1
@@ -99,9 +92,6 @@ for o_id in range(1, NUM_ORDERS + 1):
         order_items_table.append([item_id_counter, o_id, p_id, quantity, price])
         item_id_counter += 1
 
-# =====================================================================
-# 3. ЗБЕРЕЖЕННЯ У CSV-ФАЙЛИ
-# =====================================================================
 def save_to_csv(filename, headers, rows):
     with open(filename, mode="w", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
